@@ -1,0 +1,85 @@
+<template>
+  <article class="slds-card">
+
+    <!--Card Header-->
+    <div class="slds-card__header slds-grid slds-page-header">
+        <header class="slds-media slds-media_center slds-has-flexi-truncate">
+            <div class="slds-media__figure">
+              <lightning-icon icon-name={cardIcon} title="Head_Icon" size="small"></lightning-icon>
+            </div>
+            <div class="slds-media__body">
+                <h2 class="slds-card__header-title">
+                    <a href="#" class="slds-card__header-link slds-truncate" title={cmpHeading}>
+                        <span>{cmpHeading}</span>
+                    </a>
+                </h2>
+            </div>
+        </header>
+    </div>
+
+    <!--Card Body-->
+    <div class="slds-card__body slds-card__body_inner">
+        <template if:true={isLoaded}>
+          <div style="width: fit-content;">
+            <lightning-combobox label="Available Fields" value={selectedField} options={fieldOptions}
+            placeholder="Select a field" onchange={handleFieldChange}></lightning-combobox>
+          </div>
+        </template>
+        <br />
+
+        <!--Custom Table-->
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered" aria-label="Field History Table">
+          <thead>
+            <tr class="slds-line-height_reset">
+              <th class="" scope="col">
+                <div title="Current">Current Value</div>
+              </th>
+              <th class="" scope="col">
+                <div title="Previous">Previous Value</div>
+              </th>
+              <template if:true={showUser}>
+                <th class="" scope="col">
+                  <div title="Changed By">Changed By</div>
+                </th>
+              </template>
+              <template if:true={showTime}>
+                <th class="" scope="col">
+                  <div title="Changed On">Changed Date</div>
+                </th>
+              </template>
+            </tr>
+          </thead>
+          <tbody>
+            <template for:each={historyList} for:item="his">
+              <tr class="slds-hint-parent" key={his.fieldName} data-item={his}>
+                <td>
+                  {his.currentVal}
+                </td>
+                <td>
+                  {his.oldVal}
+                </td>
+                <template if:true={showUser}>
+                  <td>
+                    {his.changedBy}
+                  </td>
+                </template>
+                <template if:true={showTime}>
+                  <td>
+                    {his.changedDate}
+                  </td>
+                </template>
+              </tr>
+            </template>
+          </tbody>
+        </table>
+
+        <!--No Result Section-->
+        <template if:false={isRowAvailable}>
+          <div class="slds-align_absolute-center">No history record to display</div>
+        </template>
+    </div>
+</article>
+
+    
+
+</template>

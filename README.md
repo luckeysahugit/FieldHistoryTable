@@ -1,4 +1,4 @@
-The asset is a Lightning Web Component that has been customized to enable users to configure an object  and their fields which are enabled for history tracking and on the selection of particular field it will show the historical records of that field, also giving option to configure the fields, option to show/hide columns. And user will be having option to configure that they want to see only latest update or all previous updates.
+The asset is a Lightning Web Component that has been customized to enable and give option to users so that they can configure an object and their fields which are enabled for history tracking and on the selection of particular field it will show the historical records of that field, also giving option to configure the fields, option to show/hide columns. And user will be having option to configure that they want to see only latest update or all previous updates.
 
 Features : 
 

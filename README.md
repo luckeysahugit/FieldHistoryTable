@@ -8,3 +8,13 @@ Features :
 4. Option to configure card heading
 5. Option to configure card Icon
 
+Steps to Install : Record Page Configuration - 
+
+1. Dragged the LWC component to Record Page.
+2. Configure the LWC properties as per your need, Header Message and Icon
+3. Field: Add comma separate field api name which are history enabled in object settings.
+4. Show Latest Change: Checkbox configuration to show latest change or all the historical changes.
+5. Show Time: Checkbox configuration to enable time column by when field changed.
+6. Show User: Checkbox configuration to enable user column by whom field changed.
+
+
